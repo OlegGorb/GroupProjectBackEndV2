@@ -33,6 +33,7 @@ namespace GroupProjectBackEndV2.Controllers
 
             DateTime earlistTimeStamp = DateTime.UtcNow.AddMonths(-1);
             List<User> users = _context.Users
+                .Include(u => u.Program)
                 .Include(u => u.TimeSpends
                     .Where(t => t.StartDateTime >= earlistTimeStamp))
                 .ToList();
