@@ -20,8 +20,8 @@ builder.Configuration.AddSystemsManager("/GroupProject/Backend");
 
 // Connect to DB using credentials from System Manager
 var connectionBuilder = new SqlConnectionStringBuilder(builder.Configuration.GetConnectionString("Connection2RDS"));
-connectionBuilder.UserID = builder.Configuration["DbUser"];
-connectionBuilder.Password = builder.Configuration["DbPassword"];
+connectionBuilder.UserID = "admin";
+connectionBuilder.Password = "adminadmin";
 var connection = connectionBuilder.ConnectionString;
 
 // Add DbContext
